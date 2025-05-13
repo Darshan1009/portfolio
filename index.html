@@ -13,10 +13,13 @@
     <!-- Animated Particles Background -->
     <div id="particles-js"></div>
 
-    <!-- Navigation -->
+    <!-- Completely restructured navigation -->
     <nav id="navbar">
         <div class="nav-content">
             <div class="logo">DS.SYS</div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -29,18 +32,129 @@
 
     <!-- Cyberpunk Header -->
     <header id="home">
+        <div class="glitch-overlay"></div>
+        <div class="matrix-code"></div>
+        
         <div class="header-content">
-            <div class="cyber-title" data-aos="zoom-in">
-                DARSHAN SHINDE
-            </div>
-            <div class="cyber-subtitle" data-aos="fade-up" data-aos-delay="300">
-                Cybersecurity Engineer | AI Developer
+            <div class="terminal-window" data-aos="zoom-in">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="terminal-title">terminal@darshan:~</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">./initialize_identity.sh</div>
+                    <div class="terminal-line typing-line">[SYSTEM]: <span class="hacker-text">Accessing secure database...</span></div>
+                    <div class="terminal-line delay-1">[SYSTEM]: <span class="hacker-text">Decrypting profile...</span></div>
+                    <div class="terminal-line delay-2">[SYSTEM]: <span class="hacker-text">Identity verified.</span></div>
+                    <div class="cyber-title" data-aos="zoom-in">DARSHAN SHINDE</div>
+                    <div class="cyber-subtitle" data-aos="fade-up" data-aos-delay="300">
+                        <span class="blink">></span> Cybersecurity Engineer | AI Developer
+                    </div>
+                    <div class="terminal-line delay-3 status-line">[STATUS]: <span class="status-text">Ready for deployment</span></div>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
+                        <a href="https://drive.google.com/file/d/1OWDe5Hl-poPOGZL_oPLROn8wzHTOOeRV/view?usp=sharing" target="_blank" class="resume-button">
+                            <span class="button-text">ACCESS RESUME</span>
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+        
         <div class="scroll-down">
+            <div class="scroll-text">SCROLL FOR MORE DATA</div>
             <i class="fas fa-chevron-down"></i>
         </div>
     </header>
+
+    <!-- Add this right after the header section and before the About section -->
+    <section id="network-status-section" class="network-section">
+      <div class="container">
+        <div class="security-dashboard">
+          <h3 class="dashboard-title">// SYSTEM_STATUS</h3>
+          
+          <div class="dashboard-grid">
+            <!-- Status Monitors -->
+            <div class="status-module">
+              <div class="module-header">
+                <i class="fas fa-shield-alt"></i>
+                <span>SECURITY STATUS</span>
+              </div>
+              <div class="status-grid">
+                <div class="status-item secure">
+                  <div class="status-icon"><i class="fas fa-lock"></i></div>
+                  <div class="status-label">FIREWALL</div>
+                  <div class="status-value">ACTIVE</div>
+                </div>
+                <div class="status-item secure">
+                  <div class="status-icon"><i class="fas fa-fingerprint"></i></div>
+                  <div class="status-label">AUTH</div>
+                  <div class="status-value">SECURE</div>
+                </div>
+                <div class="status-item secure">
+                  <div class="status-icon"><i class="fas fa-shield-virus"></i></div>
+                  <div class="status-label">ANTI-MALWARE</div>
+                  <div class="status-value">ENABLED</div>
+                </div>
+                <div class="status-item secure">
+                  <div class="status-icon"><i class="fas fa-check-circle"></i></div>
+                  <div class="status-label">SSL</div>
+                  <div class="status-value">VERIFIED</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Vulnerability Scan -->
+            <div class="status-module">
+              <div class="module-header">
+                <i class="fas fa-search"></i>
+                <span>VULNERABILITY SCAN</span>
+              </div>
+              <div class="scan-container">
+                <div class="scan-status">
+                  <div id="scanProgressBar" class="scan-progress-bar">
+                    <span class="scan-progress"></span>
+                  </div>
+                  <div id="scanStatusText" class="scan-status-text">
+                    <span class="scanning-text">SCANNING SYSTEM <span class="blink-dots">...</span></span>
+                    <span class="complete-text">NO VULNERABILITIES DETECTED</span>
+                  </div>
+                </div>
+                <div class="scan-details">
+                  <div class="scan-detail-item">
+                    <span class="scan-label">PORTS SCANNED:</span>
+                    <span class="scan-value" id="portsScanned">65,536</span>
+                  </div>
+                  <div class="scan-detail-item">
+                    <span class="scan-label">THREATS FOUND:</span>
+                    <span class="scan-value" id="threatsFound">0</span>
+                  </div>
+                  <div class="scan-detail-item">
+                    <span class="scan-label">SECURITY SCORE:</span>
+                    <span class="scan-value secure" id="securityScore">A+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Network Traffic Monitor -->
+          <div class="traffic-monitor">
+            <div class="module-header">
+              <i class="fas fa-network-wired"></i>
+              <span>NETWORK ACTIVITY</span>
+            </div>
+            <div class="connections-list" id="connectionsContainer">
+              <!-- Active connections will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- About Section -->
     <section id="about">
