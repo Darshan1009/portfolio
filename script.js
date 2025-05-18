@@ -478,3 +478,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 10500);
 });
+
+document.querySelectorAll('.cyber-button, .social-link').forEach(el => {
+    el.style.pointerEvents = 'auto';
+    el.style.zIndex = 9999;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('navbar-loaded');
+    document.querySelectorAll('footer .social-link').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animated'), 200 + i * 120);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.section-title').forEach(title => {
+        // Find the closest parent section, or fallback to the parent container
+        let section = title.closest('section');
+        if (!section) section = title.parentElement;
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    title.classList.add('active');
+                } else {
+                    title.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(section);
+    });
+});
